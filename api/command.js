@@ -37,7 +37,7 @@ const ACT2_ORDER = [
 
 const CONTENT = {
   // ===== ACT 1 =====
-  "LOG#1": `[CLASSIFIED – LEVEL 5]
+  "ACCESS FILE://S7OPR": `[CLASSIFIED – LEVEL 5]
 UNIT: S.S.O. — TASK FORCE
 MISSION DATE: 01 March 2024
 OPERATION: [REDACTED]
@@ -119,28 +119,27 @@ TYPE "ONETHOUSAND" TO CONTINUE...`,
   "ONETHOUSAND": `__CORRUPTION_SEQUENCE__`, // Special trigger for frontend
 
   // ===== ACT 2 =====
-  "ACCESS FILE://TS-85": `BODYCAM TRANSCRIPT UNIT-02.
+"HIS FAULT": `BODYCAM TRANSCRIPT UNIT-02." 
 
-"So, feniks. What do you know?"
-"I don't know anything I swear!"
-"Speak or you get ####### again."
-"All I know is DIVISIONGAMMA is doing something, they found something they weren't supposed to."
-"And?"
-"They want to go somewhere, do something I don't know I was gassed after getting spotted!"
-"Gassed by what? Spotted by who?"
-"I'm not answering your damn question, it's either i stay loyal or i go too far."
-"Give us the fucking information we want you rat!"
-"Okay, okay! Fuck."
-"They found an old testing site, they want to raid it for goods."
-"Where is it?"
-"I don't know, all I know is that it's called TS-85"
-"It was meant to be a site for experimenting on humans, it belonged to the GUARD PMC, before it collapsed because the owner gave up on it."
-"Good. Put him back in the chambers, we'll intercept them there."
-"Wait, you bastards! You fucking promised something! Get me out of here!"
+" So, feniks. What do you know? "
+" I don't know anything I swear! "
+" Speak or you get ####### again. "
+" All I know is DIVISIONGAMMA is doing something, they found something they weren't supposed to. "
+" And? "
+" They want to go somewhere, do something I don't know I was gassed after getting spotted! "
+" Gassed by what? Spotted by who? "
+" I'm not answering your damn question, it's either i stay loyal or i go too far. "
+" Give us the fucking information we want you rat! "
+" Okay, okay! Fuck. "
+" They found an old testing site, they want to raid it for goods. "
+" Where is it? "
+" I don't know, all I know is that it's called TS-85 "
+" It was meant to be a site for experimenting on humans, it belonged to the GUARD PMC, before it collapsed because the owner gave up on it. "
+" Good. Put him back in the chambers, we'll intercept them there. "
+" Wait, you bastards! You fucking promised something! Get me out of here!"`,
 
----
 
-GUARD Testing Site 85.
+"ACCESS FILE://TS-85": `GUARD Testing Site 85.
 
 A warehouse for storing chemical items for the usage of GUARD research personnel, located somewhere at Testing Site 84. It was mostly used for storage of different supplies used during fights and patrols, printed money, armor, weaponry.
 Wherever they got all of this stuff from is unknown, what matters it's that it's there, ready for usage.
@@ -320,9 +319,9 @@ export default function handler(req, res) {
   }
 
   // Allow restarting Act 1 at LOG#1
-  if (cmd === "LOG#1" && !session.act1Complete) {
+  if (cmd === "ACCESS FILE://S7OPR" && !session.act1Complete) {
     session.act1Step = 1;
-    return res.status(200).json({ ok: true, cmd, data: CONTENT["LOG#1"] });
+    return res.status(200).json({ ok: true, cmd, data: CONTENT["ACCESS FILE://S7OPR"] });
   }
 
   // ACT 2 PROGRESSION (only if Act 1 complete)
@@ -335,9 +334,9 @@ export default function handler(req, res) {
     }
 
     // Allow restarting Act 2 at first command
-    if (cmd === "ACCESS FILE://TS-85") {
+    if (cmd === "HIS FAULT") {
       session.act2Step = 1;
-      return res.status(200).json({ ok: true, cmd, data: CONTENT["ACCESS FILE://TS-85"] });
+      return res.status(200).json({ ok: true, cmd, data: CONTENT["HIS FAULT"] });
     }
   }
 
