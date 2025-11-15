@@ -18,26 +18,38 @@ html, body {
   cursor: none; /* Hide cursor for immersion */
 }
 
-/* Custom cursor - crosshair style */
+/* Custom cursor - military crosshair style */
 body::after {
   content: "";
   position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 1px solid rgba(0,255,94,0.6);
-  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  border: 2px solid rgba(0,255,94,0.8);
   pointer-events: none;
   z-index: 10000;
-  animation: cursorPulse 1.5s infinite;
   left: var(--mouse-x, 50%);
   top: var(--mouse-y, 50%);
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(0,255,94,0.4), inset 0 0 5px rgba(0,255,94,0.3);
+  box-shadow: 0 0 8px rgba(0,255,94,0.6);
+  transition: none; /* Instant response */
 }
 
-@keyframes cursorPulse {
-  0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+/* Crosshair lines */
+body::before {
+  content: "";
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 10000;
+  left: var(--mouse-x, 50%);
+  top: var(--mouse-y, 50%);
+  transform: translate(-50%, -50%);
+  background: 
+    linear-gradient(90deg, transparent 7px, rgba(0,255,94,0.6) 7px, rgba(0,255,94,0.6) 9px, transparent 9px),
+    linear-gradient(0deg, transparent 7px, rgba(0,255,94,0.6) 7px, rgba(0,255,94,0.6) 9px, transparent 9px);
+  transition: none; /* Instant response */
+}
 }
 
 /* Ambient room darkness with subtle light leak */
