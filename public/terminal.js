@@ -223,6 +223,11 @@ input.addEventListener('keydown', async (e) => {
     // handle special tokens from server
     if(res.data === "__CLEAR__"){ display.innerHTML = ''; return; }
     if(res.data === "__REBOOT__"){ append("<< REBOOTING >>", 'system'); await new Promise(r=>setTimeout(r,600)); location.reload(); return; }
+    if(res.data === "__CORRUPTION_SEQUENCE__"){ 
+      append("<< INITIATING SYSTEM CORRUPTION >>", 'error');
+      setTimeout(()=>{ corruptionSequence(); }, 1200); 
+      return; 
+    }
 
     // normal content
     if(res.cmd === "CONNECT"){
@@ -238,16 +243,29 @@ input.addEventListener('keydown', async (e) => {
       a.textContent = res.data.replace('ENCRYPTED LINK: ', '');
       a.target = "_blank";
       display.appendChild(a);
+    } else if(res.cmd === "G13-02"){
+      // Show G13-02 content with end.png image
+      append(res.data, 'normal');
+      const img = document.createElement('img');
+      img.src = '/assets/end.png';
+      img.style.maxWidth = '60%';
+      img.style.display = 'block';
+      img.style.margin = '12px auto';
+      img.style.border = '2px solid rgba(0,255,0,0.3)';
+      display.appendChild(img);
     } else {
       append(res.data, 'normal');
     }
-
-    // Post-G13-02 trigger: terminal insanity
-    if(res.cmd === "G13-02"){
-      // small pause then go full corruption
-      setTimeout(()=>{ corruptionSequence(); }, 800);
-    }
   } else {
+    // Check for Act 2 locked message
+    if(res.message === "__ACT2_LOCKED__"){
+      append(res.data, 'error');
+      staticBurst(0.2, 0.15);
+      frame.classList.add('frame-corrupt');
+      setTimeout(()=>frame.classList.remove('frame-corrupt'), 1500);
+      tone(100, 0.4, 'sawtooth', 0.12);
+      return;
+    }
     append("PROTOCOL ERROR", 'error');
     tone(180, 0.14, 'sawtooth', 0.06);
   }
