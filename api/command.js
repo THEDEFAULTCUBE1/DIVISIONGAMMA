@@ -17,6 +17,7 @@ const ACT1_ORDER = [
 
 // ACT 2 ORDER (unlocked after Act 1 completion)
 const ACT2_ORDER = [
+  "HIS FAULT",
   "ACCESS FILE://TS-85",
   "WAREHOUSE",
   "SSO ARE FIGHTING DG",
