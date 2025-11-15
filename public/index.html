@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>S.S.O. — Division Gamma Terminal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="boot">
+    <pre id="boot-text"></pre>
+    <div class="bar"><div class="bar-fill"></div></div>
+  </div>
+
+  <div id="frame" hidden>
+    <div class="status">S.S.O. SYSTEM — SECTOR 07 ACCESS PANEL</div>
+    <div id="display" tabindex="0" aria-live="polite"></div>
+    <div class="footer">Type HELP for system info</div>
+
+    <div id="prompt-line">
+      <span class="prompt">S.S.O.#</span>
+      <input id="cmd-input" autocomplete="off" />
+    </div>
+
+    <div class="scanlines"></div>
+    <div class="static-overlay"></div>
+  </div>
+
+  <audio id="bg" loop preload="auto" src="assets/background.mp3"></audio>
+
+  <script src="terminal.js"></script>
+</body>
+</html>
