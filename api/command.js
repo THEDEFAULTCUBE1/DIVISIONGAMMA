@@ -276,6 +276,12 @@ export default function handler(req, res) {
   const cmdRaw = String(req.body.cmd || "").trim();
   const cmd = cmdRaw.toUpperCase();
 
+  // Handle special command to set Act 1 complete from client
+  if (cmd === '__SET_ACT1_COMPLETE__') {
+    session.act1Complete = true;
+    return res.status(200).json({ ok: true, message: "Act 1 status updated" });
+  }
+
   // Global commands
   if (GLOBAL_COMMANDS[cmd]) {
     let data = GLOBAL_COMMANDS[cmd];

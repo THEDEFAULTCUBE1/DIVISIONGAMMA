@@ -10,8 +10,23 @@ const bgAudio = document.getElementById('bg');
 
 bgAudio.volume = 0.12;
 
-// Session token (stored in memory, not localStorage to avoid persistence)
+// Custom cursor tracking for immersive effect
+document.addEventListener('mousemove', (e) => {
+  document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+  document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+});
+
+// Session token (stored in memory)
 let sessionToken = null;
+
+// Act 1 completion flag (stored in sessionStorage to persist through reboot)
+function isAct1Complete() {
+  return sessionStorage.getItem('act1_complete') === 'true';
+}
+
+function markAct1Complete() {
+  sessionStorage.setItem('act1_complete', 'true');
+}
 
 // WebAudio helpers (8-bit style)
 function makeContext(){
@@ -207,7 +222,11 @@ input.addEventListener('keydown', async (e) => {
     const res = await postJson('/api/auth', { password: raw });
     if(res.ok){ 
       authed = true; 
-      sessionToken = res.sessionToken; // Store session token
+      sessionToken = res.sessionToken;
+      // Send Act 1 completion status to server
+      if (isAct1Complete()) {
+        await postJson('/api/command', { cmd: '__SET_ACT1_COMPLETE__' }, true);
+      }
       append("AUTHORIZED", 'system'); 
       append(res.info||'', 'system'); 
       startHauntLoop(); 
@@ -225,6 +244,8 @@ input.addEventListener('keydown', async (e) => {
     if(res.data === "__REBOOT__"){ append("<< REBOOTING >>", 'system'); await new Promise(r=>setTimeout(r,600)); location.reload(); return; }
     if(res.data === "__CORRUPTION_SEQUENCE__"){ 
       append("<< INITIATING SYSTEM CORRUPTION >>", 'error');
+      // Mark Act 1 as complete before corruption
+      markAct1Complete();
       setTimeout(()=>{ corruptionSequence(); }, 1200); 
       return; 
     }
