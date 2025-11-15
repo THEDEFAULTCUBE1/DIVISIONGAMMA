@@ -174,6 +174,7 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000; /* Added z-index to keep it on top */
 }
 
 .status::before {
@@ -340,12 +341,13 @@ body::before {
   height: calc(100% - 180px);
   overflow-y: auto;
   overflow-x: hidden;
-  padding: 50px 25px 25px 25px;
+  padding: 70px 25px 25px 25px; /* INCREASED top padding to 70px */
   white-space: pre-wrap;
   line-height: 1.6;
   font-size: 14px;
   position: relative;
   background: rgba(0,5,2,0.5);
+  margin-top: 48px; /* Added margin to push content below status bar */
   /* CUSTOM SCROLLBAR */
   scrollbar-width: thin;
   scrollbar-color: rgba(0,255,94,0.5) rgba(0,20,10,0.3);
