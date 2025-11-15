@@ -3,14 +3,15 @@
 
 // ACT 1 ORDER
 const ACT1_ORDER = [
-  "LOG#1",
+  "ACCESS FILE://S7OPR",
   "TRACE",
   "TRACE GROUP C",
   "CONNECT",
   "OHGOD",
   "FALLEN",
+  "NOTHINGISASITSHOULDBE",
   "THEYREKEEPINGONEALIVE",
-  "ACCESS://FILE:FENIX",
+  "ACCESS FILE://FENIX",
   "G13-02",
   "ONETHOUSAND" // New: triggers corruption AFTER reading G13-02
 ];
@@ -89,6 +90,21 @@ ASSUMPTIONS: THE HOODED HUMANOID FIGURE IS BULLETPROOF BUT COMPLETLY VULNERABLE 
 NEW DESIGNATION: F##L#N.`,
 
   "FALLEN": `ENCRYPTED LINK: https://www.youtube.com/watch?v=wlr5GpfSqAk`,
+    
+  "NOTHINGISASITSHOULDBE":`" AUDIO TAPE 17 SEPTEMBER 2024 TRANSCRIPT. 
+ ACCESS LEVEL INSURGENCY PRIORITY CARD #3 REQUIRED.
+
+ " Sigh, what do we do now? "
+ " I fired 40 members on my second day. No wonder you needed to create DIVISIONGAMMA. "
+ " Members are already angry assuming that Division gamma is just security personnel made scarier. "
+ " Well then they BETTER take this serious. "
+ " How many did you kill? "
+ " Fifty four (54). "
+ " And? "
+ " THEY'RE KEEPING ONE ALIVE. "
+ " Who is it? "
+<< ERROR YOU DO NOT HAVE THE REQUIRED ACCESS. >>
+<< AUTHORITIES HAVE BEEN ALERTED. >>`,
 
   "THEYREKEEPINGONEALIVE": `DIVISION GAMMA FACILITY "TS-84" RAID LOGS.
 ENTERED AT: 0500 hours (local)
@@ -100,7 +116,7 @@ FOUND INFORMATION:
 - One (1) Non identifiable object.
 Keycards had the names of: GU### ######### and FENI# ###########`,
 
-  "ACCESS://FILE:FENIX": `S.S.O. COLONEL FENIX.
+  "ACCESS FILE://FENIX": `S.S.O. COLONEL FENIX.
 DIVISION GAMMA PRIORITY CARD 0. INSURGENCY PRIORITY CARD 0. SSO PRIORITY CARD 4.
 "Former ##### Secondary leader, joined the S.S.O. after the incidents of G13-02, experience in weaponry and tactical advancements."`,
 
