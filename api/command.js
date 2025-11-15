@@ -184,7 +184,7 @@ Six (6) Division gamma agents entered the underground laboratory, searching for 
 A huge group of SEVENTY-FIVE (75) S.S.O. Low-Ranking members followed division gamma inside the underground laboratory.
 Low-ranking members found keycards belonging to Fenix and GUARD_COMMANDER, one of them shouted "Hey! I found something!"
 Division GAMMA heard them, and a huge war broke out between Division GAMMA and LR S.S.O. members. The war lasted for two days
-After the f
+After the two day fight
 << ERROR >>
 << FILE UPDATED >>
 << CCTV AUDIO HAS BEEN UPLOADED OF THE TWO DAY FIGHT. >>
