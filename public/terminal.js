@@ -257,6 +257,12 @@ input.addEventListener('keydown', async (e) => {
       btn.textContent = 'PLAY REMOTE AUDIO';
       btn.onclick = () => { new Audio('/assets/OhGod.mp3').play().catch(()=>{}); };
       display.appendChild(btn);
+    } else if(res.cmd === "COUNTER-RAID TS-84"){
+      append(res.data, 'system');
+      const btn = document.createElement('button');
+      btn.textContent = 'PLAY REMOTE AUDIO';
+      btn.onclick = () => { new Audio('/assets/CCTV.mp3').play().catch(()=>{}); };
+      display.appendChild(btn);
     } else if(res.cmd === "FALLEN"){
       append("ENCRYPTED LINK:", 'system');
       const a = document.createElement('a');

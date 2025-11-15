@@ -169,7 +169,7 @@ GUR JNERUBHFR VF ABG N JNERUBHFR. GURL'ER UVQVAT FBZRGUVAT. F.F.B. VF CERCNEVAT 
 FILE UPDATED: Testing Site-84 Is disguised as a warehouse, deep underground is the true laboratory for the P.M.C. "GUARD", where the anomalies of today were created by accident. Due to the fact that GUARD had no leader, it lacked funding, promotion. Letting the anomalies free. The underground laboratory has a ton of goodies that have never been grabbed due to the risks down there. According to all files except this one, this laboratory does NOT exist. Nobody knows it exists, so nobody went down there. And even if they did, they probably won't go down there due to the risks.
 
 << ERROR, FILE HAS BEEN DELETED. >>
-UPLOADING NEW FILE: r7GOVavX{@miCb!qY[y}mns%%pe<UWlQ:*Jmmnm+sS*a7r.ljYpFJ35k$$6te*9$:ml%<vavF!1lR*DLmmg2%mP92Raxg)6qY]4dqCx.Tk$&)rmn^2VqxOt5l}5*>awLv63pN&<pF@r5pEESbiV}l$qbP!XswYz]qC{p*avw{)mkD$EygQ1Dy+Q3Op^F#ih:GkMfeCLepIh*N3pN&<pF@r5pEESdiV{ahfFCgnfFBR6f!+pnf!>x`,
+UPLOADING NEW FILE: r7GOVavX{@miCb!qY[y}mns%%pe<UWlQ:*Jmmnm+sS*a7r.ljYpFJ35k$$6te*9$:ml%<vavF!1lR*DLmmg2%mP92Raxg)6qY]4dqCx.Tk$&)rmn^2VqxOt5l}5*>awLv63pN&<pF@r5pEESbiV}l$qbP!XswYz]qC{p*avw{)mkD$EygQ1Dy+Q3Op^F#ih:GkMfeCLepIh*N3pN&<pF@r5pEESdiV{ahfFCgnfFBR6f!+pnf!>x `,
 
   "SSO ARE FIGHTING DG": `"We're not letting those fucks get away, not after all they did, you remember those guys sent to S-07? Yeah they fucking died! All of them got tortured by that fallen creature thing. Yes I read the files, yes I know what happened. We're coming for them, and i'm not letting them get away with this. Gear up and meet me at the point. Code COUNTER-RAID TS-84."`,
 
@@ -188,7 +188,7 @@ After the f
 << ERROR >>
 << FILE UPDATED >>
 << CCTV AUDIO HAS BEEN UPLOADED OF THE TWO DAY FIGHT. >>
-<< VIEW IT RIGHT HERE: [AUDIO LINK PLACEHOLDER] >>`,
+<< VIEW IT RIGHT HERE: /assets/CCTV.mp3 >>`,
 
   "TWODAYFIGHT": `After the two (2) days passed, one singular division gamma member came out with blood all over him, he was escorted back to the main base via helicopter, everyone was put on lockdown to avoid seeing the identity of the division gamma member. The facility was locked down by S.S.O. specialists, anyone who approached the area and seen by the S.S.O. specialists was executed with the exception of Division Gamma.`,
 
